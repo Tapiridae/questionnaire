@@ -1,15 +1,15 @@
-import Home from '../assets/home.jpg';
-import Q1 from '../assets/Q1.jpg';
-import Q2 from '../assets/Q2.jpg';
-import Q3 from '../assets/Q3.jpg';
-import Q4 from '../assets/Q4.jpg';
-import AA from '../assets/AA.jpg';
-import AB from '../assets/AB.jpg';
-import AC from '../assets/AC.jpg';
-import AD from '../assets/AD.jpg';
-import AE from '../assets/AE.jpg';
-import AF from '../assets/AF.jpg';
-import AG from '../assets/AG.jpg';
+import Home from '/home.jpg';
+import Q1 from '/Q1.jpg';
+import Q2 from '/Q2.jpg';
+import Q3 from '/Q3.jpg';
+import Q4 from '/Q4.jpg';
+import AA from '/AA.jpg';
+import AB from '/AB.jpg';
+import AC from '/AC.jpg';
+import AD from '/AD.jpg';
+import AE from '/AE.jpg';
+import AF from '/AF.jpg';
+import AG from '/AG.jpg';
 
 export const Configuration = [
   {
