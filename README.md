@@ -1,47 +1,115 @@
-# Svelte + Vite
+# Muo 问卷 - 个性化色彩测试
 
-This template should help get you started developing with Svelte in Vite.
+一个基于 Svelte + Vite 构建的交互式问卷应用，帮助用户找到他们的专属 Muo 色彩。
 
-## Recommended IDE Setup
+## 项目简介
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+Muo 问卷是一个有趣的色彩性格测试应用，通过四个精心设计的问题，帮助用户发现与他们个性最匹配的色彩。应用通过用户的回答分析，展示其专属的色彩类型和描述。
 
-## Need an official Svelte framework?
+## 功能特性
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+- 🎨 精美的视觉设计，每个问题都有独特的背景图片
+- 🔄 流畅的页面过渡动画
+- 📱 响应式设计，适配各种设备
+- ⚡ 快速加载，基于 Vite 构建
+- 🧠 智能分析，根据用户选择计算匹配的色彩类型
 
-## Technical considerations
+## 技术栈
 
-**Why use this over SvelteKit?**
+- [Svelte 5](https://svelte.dev/) - 前端框架
+- [Vite](https://vitejs.dev/) - 构建工具
+- JavaScript (ES6+)
+- CSS3 动画
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+## 项目结构
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
 ```
+src/
+├── assets/           # 静态资源文件（背景图片）
+├── lib/              # 核心组件和配置
+│   ├── index.svelte   # 主问卷组件
+│   ├── answer.svelte  # 答案展示组件
+│   └── configuration.js # 问卷配置和答案数据
+├── App.svelte        # 应用根组件
+├── main.js           # 应用入口文件
+└── app.css           # 全局样式
+```
+
+## 问卷流程
+
+1. 首页：欢迎页面，点击开始测试
+2. 问题页：四个选择题，每个问题有7个选项
+3. 结果页：根据用户选择显示匹配的色彩类型和描述
+
+## 色彩类型
+
+根据用户回答，系统会匹配以下7种色彩类型之一：
+
+- **幻影蓝 (A)** - 沉浸内心自我
+- **暮银 (B)** - 随心自在律动
+- **雾琥珀 (C)** - 尽享时光流转
+- **橙月 (D)** - 共赴自然漫游
+- **森绿 (E)** - 疗愈静谧本心
+- **可可棕 (F)** - 自有悠然天地
+- **午夜黑 (G)** - 遁入深邃之境
+
+## 开发指南
+
+### 环境要求
+
+- Node.js >= 16
+- pnpm >= 7
+
+### 安装依赖
+
+```bash
+pnpm install
+```
+
+### 启动开发服务器
+
+```bash
+pnpm dev
+```
+
+默认访问地址：http://localhost:5173
+
+### 构建生产版本
+
+```bash
+pnpm build
+```
+
+构建文件将输出到 `dist` 目录。
+
+### 预览生产构建
+
+```bash
+pnpm preview
+```
+
+## 问卷配置
+
+问卷问题和答案配置在 [src/lib/configuration.js](src/lib/configuration.js) 文件中：
+
+- `Configuration` 数组包含所有问题及其选项
+- `Answer` 对象定义了每种答案类型对应的色彩结果
+
+## 动画效果
+
+应用使用了多种动画效果提升用户体验：
+
+- 页面切换的淡入淡出效果
+- 标题和选项的飞入动画
+- 答案页面的滑动过渡
+
+## 浏览器支持
+
+- Chrome >= 88
+- Firefox >= 78
+- Safari >= 14
+- Edge >= 88
+
+## 许可证
+
+MIT
