@@ -1,15 +1,24 @@
+import Home from '../assets/home.jpg';
+import Q1 from '../assets/Q1.jpg';
+import Q2 from '../assets/Q2.jpg';
+import Q3 from '../assets/Q3.jpg';
+import Q4 from '../assets/Q4.jpg';
 import AA from '../assets/AA.jpg';
 import AB from '../assets/AB.jpg';
 import AC from '../assets/AC.jpg';
+import AD from '../assets/AD.jpg';
+import AE from '../assets/AE.jpg';
+import AF from '../assets/AF.jpg';
+import AG from '../assets/AG.jpg';
 
-const configuration = [
+export const Configuration = [
   {
     title: '找到你的专属 Muo 色彩',
-    background: AA
+    background: Home
   },
   {
     title: '你理想的放松方式是什么？',
-    background: AB,
+    background: Q1,
     options: [
       {
         title: 'A) 读一本好书或听播客',
@@ -43,7 +52,7 @@ const configuration = [
   },
   {
     title: '你通常喜欢在什么地方欣赏音乐？',
-    background: AC,
+    background: Q2,
     options: [
       {
         title: 'A) 安静舒适的小角落',
@@ -77,7 +86,7 @@ const configuration = [
   },
   {
     title: '你会如何描述自己的音乐品味？',
-    background: AC,
+    background: Q3,
     options: [
       {
         title: 'A) 平静舒缓型',
@@ -111,7 +120,7 @@ const configuration = [
   },
   {
     title: '你最希望从每日聆听的声音中获得什么？',
-    background: AC,
+    background: Q4,
     options: [
       {
         title: 'A) 逃离喧嚣与放松身心',
@@ -142,11 +151,43 @@ const configuration = [
         value: 'G'
       }
     ]
-  },
-  {
-    title: '请统计你选择最多的字母',
-    background: AC
   }
 ];
 
-export default configuration;
+export const Answer = {
+  A: {
+    title: '幻影蓝',
+    description: '此刻，沉浸内心自我。',
+    background: AA
+  },
+  B: {
+    title: '暮银',
+    description: '此刻，随心自在律动。',
+    background: AB
+  },
+  C: {
+    title: '雾琥珀',
+    description: '此刻，尽享时光流转。',
+    background: AC
+  },
+  D: {
+    title: '橙月',
+    description: '此刻，共赴自然漫游。',
+    background: AD
+  },
+  E: {
+    title: '森绿',
+    description: '此刻，疗愈静谧本心。',
+    background: AE
+  },
+  F: {
+    title: '可可棕',
+    description: '此刻，自有悠然天地。',
+    background: AF
+  },
+  G: {
+    title: '午夜黑',
+    description: '此刻，遁入深邃之境。',
+    background: AG
+  }
+};

@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      modern-normalize:
+        specifier: ^3.0.1
+        version: 3.0.1
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6.1.1
@@ -14,9 +18,6 @@ importers:
       svelte:
         specifier: ^5.38.1
         version: 5.38.10
-      svelte-routing:
-        specifier: ^2.13.0
-        version: 2.13.0
       vite:
         specifier: ^7.1.2
         version: 7.1.5
@@ -387,6 +388,10 @@ packages:
   magic-string@0.30.19:
     resolution: {integrity: sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw==, tarball: https://registry.npmjs.org/magic-string/-/magic-string-0.30.19.tgz}
 
+  modern-normalize@3.0.1:
+    resolution: {integrity: sha512-VqlMdYi59Uch6fnUPxnpijWUQe+TW6zeWCvyr6Mb7JibheHzSuAAoJi2c71ZwIaWKpECpGpYHoaaBp6rBRr+/g==, tarball: https://registry.npmjs.org/modern-normalize/-/modern-normalize-3.0.1.tgz}
+    engines: {node: '>=6'}
+
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==, tarball: https://registry.npmjs.org/ms/-/ms-2.1.3.tgz}
 
@@ -414,9 +419,6 @@ packages:
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==, tarball: https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz}
     engines: {node: '>=0.10.0'}
-
-  svelte-routing@2.13.0:
-    resolution: {integrity: sha512-/NTxqTwLc7Dq306hARJrH2HLXOBtKd7hu8nxgoFDlK0AC4SOKnzisiX/9m8Uksei1QAWtlAEdF91YphNM8iDMg==, tarball: https://registry.npmjs.org/svelte-routing/-/svelte-routing-2.13.0.tgz}
 
   svelte@5.38.10:
     resolution: {integrity: sha512-UY+OhrWK7WI22bCZ00P/M3HtyWgwJPi9IxSRkoAE2MeAy6kl7ZlZWJZ8RaB+X4KD/G+wjis+cGVnVYaoqbzBqg==, tarball: https://registry.npmjs.org/svelte/-/svelte-5.38.10.tgz}
@@ -732,6 +734,8 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
+  modern-normalize@3.0.1: {}
+
   ms@2.1.3: {}
 
   nanoid@3.3.11: {}
@@ -774,8 +778,6 @@ snapshots:
       fsevents: 2.3.3
 
   source-map-js@1.2.1: {}
-
-  svelte-routing@2.13.0: {}
 
   svelte@5.38.10:
     dependencies:
