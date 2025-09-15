@@ -24,15 +24,21 @@ Muo 问卷是一个有趣的色彩性格测试应用，通过四个精心设计�
 ## 项目结构
 
 ```
-src/
-├── assets/           # 静态资源文件（背景图片）
-├── lib/              # 核心组件和配置
-│   ├── index.svelte   # 主问卷组件
-│   ├── answer.svelte  # 答案展示组件
-│   └── configuration.js # 问卷配置和答案数据
-├── App.svelte        # 应用根组件
-├── main.js           # 应用入口文件
-└── app.css           # 全局样式
+.
+├── public/                # 静态资源文件（背景图片）
+│   ├── home.jpg           # 首页背景图
+│   ├── Q1.jpg-Q4.jpg      # 问题页面背景图
+│   └── AA.jpg-AG.jpg      # 结果页面背景图
+├── src/
+│   ├── lib/               # 核心组件和配置
+│   │   ├── index.svelte   # 主问卷组件
+│   │   ├── answer.svelte  # 答案展示组件
+│   │   └── configuration.js # 问卷配置和答案数据
+│   ├── App.svelte         # 应用根组件
+│   ├── main.js            # 应用入口文件
+│   └── app.css            # 全局样式
+├── index.html             # HTML 模板
+└── vite.config.js         # Vite 配置文件
 ```
 
 ## 问卷流程
@@ -86,6 +92,16 @@ pnpm build
 
 ```bash
 pnpm preview
+```
+
+## 图片资源管理
+
+所有背景图片都存放在 `public` 目录中，Vite 会自动将这些资源作为静态资源处理。在代码中通过绝对路径引用这些图片：
+
+```javascript
+import Home from '/home.jpg';
+import Q1 from '/Q1.jpg';
+// ... 其他图片导入
 ```
 
 ## 问卷配置
