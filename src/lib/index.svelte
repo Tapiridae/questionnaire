@@ -1,10 +1,11 @@
 <script>
-  let count = $state(0)
+  let index = $state(0);
+
   const increment = () => {
-    count += 1
-  }
+    index += 1;
+  };
 </script>
 
 <button onclick={increment}>
-  count is {count}
+  currentPage is {index}
 </button>
