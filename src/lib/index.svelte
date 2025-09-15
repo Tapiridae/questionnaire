@@ -5,7 +5,6 @@
 
   let index = $state(0); // 当前页码
   let data = $state([]); // 答案出现次数
-  let imagesPreloaded = $state(false); // 图片是否预加载完成
 
   const showAnswer = $derived(index === Configuration.length); // 是否显示答案
   const current = $derived(Configuration[index]); // 当前问题
@@ -25,16 +24,9 @@
   };
 </script>
 
-<!-- 显示加载状态 -->
-{#if !imagesPreloaded}
-  <div class="loading">
-    <p>加载中...</p>
-  </div>
-{/if}
-
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <!-- svelte-ignore a11y_click_events_have_key_events -->
-{#if current && imagesPreloaded}
+{#if current}
   {#key index}
     <div
       class="container"
