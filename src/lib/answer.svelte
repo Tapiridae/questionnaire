@@ -5,16 +5,6 @@
   let index = $state(0);
   let previousIndex = $state(0);
 
-  // 预加载所有答案背景图片
-  $effect(() => {
-    if (answer.length > 0) {
-      answer.forEach((item) => {
-        const img = new Image();
-        img.src = item.background;
-      });
-    }
-  });
-
   let current = $derived.by(() => {
     if (index < answer.length) return answer[index];
     else return answer[answer.length - 1];
@@ -51,31 +41,3 @@
     </div>
   </div>
 {/key}
-
-<style>
-  .container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .title {
-    font-size: 24px;
-    color: white;
-    margin: 100px 43px 75px 43px;
-    font-weight: 500;
-  }
-
-  .section {
-    margin-bottom: 23px;
-  }
-
-  .description {
-    margin-left: 43px;
-    color: white;
-    font-size: 18px;
-  }
-</style>

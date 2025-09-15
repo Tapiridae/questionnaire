@@ -7,44 +7,11 @@
   let data = $state([]); // 答案出现次数
   let imagesPreloaded = $state(false); // 图片是否预加载完成
 
-  // 预加载所有背景图片
-  const preloadImages = () => {
-    const imagePaths = [
-      ...Configuration.map((item) => item.background),
-      ...Object.values(Answer).map((item) => item.background)
-    ];
-
-    let loadedCount = 0;
-    const totalImages = imagePaths.length;
-
-    imagePaths.forEach((path) => {
-      const img = new Image();
-      img.onload = () => {
-        loadedCount++;
-        if (loadedCount === totalImages) {
-          imagesPreloaded = true;
-        }
-      };
-      img.onerror = () => {
-        loadedCount++;
-        if (loadedCount === totalImages) {
-          imagesPreloaded = true;
-        }
-      };
-      img.src = path;
-    });
-  };
-
-  // 组件挂载时开始预加载图片
-  $effect(() => {
-    preloadImages();
-  });
-
   const showAnswer = $derived(index === Configuration.length); // 是否显示答案
   const current = $derived(Configuration[index]); // 当前问题
-  const answer = $derived.by(() => {
-    return Array.from(new Set(data)).map((key) => Answer[key]);
-  });
+  const answer = $derived.by(() =>
+    Array.from(new Set(data)).map((key) => Answer[key])
+  );
 
   // 下一页
   const next = () => {
@@ -94,7 +61,7 @@
     </div>
   {/key}
 {/if}
-{#if showAnswer && imagesPreloaded}
+{#if showAnswer}
   <Anser {answer} />
 {/if}
 
@@ -108,16 +75,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
-
-  .loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 18px;
-    color: white;
-    background-color: #242424;
   }
 
   :global {
