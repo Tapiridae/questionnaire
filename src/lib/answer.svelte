@@ -64,6 +64,6 @@
 
   .content p:nth-child(3) {
     font-size: 14px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 </style>

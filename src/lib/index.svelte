@@ -58,7 +58,10 @@
       style:background-image="url({current.background})"
       ontouchend={next}
     >
-      <div class="title" in:fly={{ x: -100, duration: 500 }}>
+      <div
+        class={['title home', showEnding ? 'ending-text' : '']}
+        in:fly={{ x: -100, duration: 500 }}
+      >
         {current.title}
       </div>
       {#if index > 0 && current?.options?.length > 0 && !showEnding}
@@ -79,7 +82,10 @@
       {#if showEnding}
         <div class="question" in:slide={{ duration: 400 }}>
           {#each endingCurrent as option, i}
-            <span class="option-plain" style="animation-delay: {i * 0.1}s">
+            <span
+              class="option-plain ending-text"
+              style="animation-delay: {i * 0.1}s"
+            >
               {option.title}
             </span>
             <br />
@@ -104,6 +110,14 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .home {
+    font-size: 30px;
+  }
+
+  .ending-text {
+    font-size: 26px;
   }
 
   :global {
