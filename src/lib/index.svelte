@@ -48,7 +48,7 @@
             <span
               class="option"
               style="animation-delay: {i * 0.1}s"
-              onclick={() => click(option.value)}
+              ontouchend={() => click(option.value)}
             >
               {option.title}
             </span>
@@ -119,8 +119,9 @@
     }
 
     .option:active {
-      opacity: 0.8 !important;
-      transform: translateY(2px) scale(0.98) !important;
+      position: relative;
+      color: gray;
+      top: 2px;
       box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
     }
   }
