@@ -1,4 +1,5 @@
 import Home from '/home.jpg';
+import Count from '/count.jpg';
 import Q1 from '/Q1.jpg';
 import Q2 from '/Q2.jpg';
 import Q3 from '/Q3.jpg';
@@ -151,43 +152,84 @@ export const Configuration = [
         value: 'G'
       }
     ]
+  },
+  {
+    title: '查看适配您的缤纷色彩：',
+    background: Count,
+    options: [
+      { title: 'A：午夜黑', value: 'A' },
+      { title: 'B：暮银', value: 'B' },
+      { title: 'C：幻影蓝', value: 'C' },
+      { title: 'D：可可棕', value: 'D' },
+      { title: 'E：森绿', value: 'E' },
+      { title: 'F：雾琥珀', value: 'F' },
+      { title: 'G：橙月', value: 'G' }
+    ]
   }
 ];
 
 export const Answer = {
   A: {
-    title: '幻影蓝',
-    description: '此刻，沉浸内心自我。',
-    background: AA
+    title: '你沉稳内敛，忠于自我，有自己的品味与格调。',
+    background: AA,
+    content: {
+      title: '午夜黑',
+      description: '此刻，遁入深邃之境。',
+      descriptionEN: 'Moments to dive deep into everywhere.'
+    }
   },
   B: {
-    title: '暮银',
-    description: '此刻，随心自在律动。',
-    background: AB
+    title: '你从容优雅，淡定自若，善于创造出独属于你的规则秩序。',
+    background: AB,
+    content: {
+      title: '暮银',
+      description: '此刻，随心自在律动。',
+      descriptionEN: 'Moments driven by rhythm and effortless flow.'
+    }
   },
   C: {
-    title: '雾琥珀',
-    description: '此刻，尽享时光流转。',
-    background: AC
+    title: '你理性沉静，纯粹稳定，拥有内在的浩瀚与安宁。',
+    background: AC,
+    content: {
+      title: '幻影蓝',
+      description: '此刻，沉浸内心自我。',
+      descriptionEN: 'Moments to unwind and get lost in a story.'
+    }
   },
   D: {
-    title: '橙月',
-    description: '此刻，共赴自然漫游。',
-    background: AD
+    title: '你温暖包容、品味自成，懂得分享，也懂得倾听。',
+    background: AD,
+    content: {
+      title: '可可棕',
+      description: '此刻，自有悠然天地。',
+      descriptionEN: 'Moments curating the vibe, no playlists needed.'
+    }
   },
   E: {
-    title: '森绿',
-    description: '此刻，疗愈静谧本心。',
-    background: AE
+    title: '你睿智深远、充满希望，拥护自己平和的生命力。',
+    background: AE,
+    content: {
+      title: '森绿',
+      description: '此刻，疗愈静谧本心。',
+      descriptionEN: 'Moments of focus, amplified in stillness.'
+    }
   },
   F: {
-    title: '可可棕',
-    description: '此刻，自有悠然天地。',
-    background: AF
+    title: '你细腻敏锐、魅力天成，彰显不凡的光华与智慧。',
+    background: AF,
+    content: {
+      title: '雾琥珀',
+      description: '此刻，尽享时光流转。',
+      descriptionEN: 'Moments capturing the frame by frame.'
+    }
   },
   G: {
-    title: '午夜黑',
-    description: '此刻，遁入深邃之境。',
-    background: AG
+    title: '你炽热自由、敢于冒险，永远向往远方与未知。',
+    background: AG,
+    content: {
+      title: '橙月',
+      description: '此刻，掌控冒险本色。',
+      descriptionEN: 'Moments owning the rhythm of adventure.'
+    }
   }
 };
