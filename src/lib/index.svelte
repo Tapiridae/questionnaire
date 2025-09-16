@@ -30,14 +30,12 @@
   };
 </script>
 
-<!-- svelte-ignore a11y_no_static_element_interactions -->
-<!-- svelte-ignore a11y_click_events_have_key_events -->
 {#if current}
   {#key index}
     <div
       class="container"
       style:background-image="url({current.background})"
-      onclick={next}
+      ontouchend={next}
     >
       <div class="title" in:fly={{ x: -100, duration: 500 }}>
         {current.title}

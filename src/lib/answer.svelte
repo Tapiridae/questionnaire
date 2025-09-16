@@ -18,13 +18,11 @@
   };
 </script>
 
-<!-- svelte-ignore a11y_click_events_have_key_events -->
-<!-- svelte-ignore a11y_no_static_element_interactions -->
 {#key index}
   <div
     class="container"
     style:background-image="url({current.background})"
-    onclick={next}
+    ontouchend={next}
     in:fly={{ y: 100, duration: 600 }}
     out:fade
   >
