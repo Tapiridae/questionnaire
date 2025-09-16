@@ -55,5 +55,15 @@
   .content p:nth-child(1) {
     font-size: 24px;
     margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .content p:nth-child(2) {
+    font-size: 13px;
+  }
+
+  .content p:nth-child(3) {
+    font-size: 14px;
+    margin-bottom: 1rem;
   }
 </style>

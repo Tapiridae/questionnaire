@@ -122,9 +122,9 @@
     }
 
     .title {
-      font-size: 24px;
-      color: white;
-      margin: 100px 43px 75px 43px;
+      font-size: 32px;
+      color: #fff;
+      margin: 80px 42px 20px;
       font-weight: 500;
     }
 
@@ -167,7 +167,8 @@
     .preview {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: end;
+      padding-bottom: 96px;
       width: 100%;
       height: 100%;
       font-size: 24px;
