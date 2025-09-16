@@ -22,6 +22,12 @@
     data.push(value);
     index += 1;
   };
+
+  // 重置
+  const reset = () => {
+    data = [];
+    index = 0;
+  };
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -54,7 +60,7 @@
   {/key}
 {/if}
 {#if showAnswer}
-  <Anser {answer} />
+  <Anser {answer} onReset={reset} />
 {/if}
 
 <style>
@@ -74,6 +80,9 @@
       display: flex;
       flex-direction: column;
       height: 100vh;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
       overflow: hidden;
       background-size: cover;
       background-position: center;
@@ -106,6 +115,13 @@
       cursor: pointer;
       opacity: 0;
       animation: fadeInUp 0.5s forwards;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .option:active {
+      opacity: 0.8 !important;
+      transform: translateY(2px) scale(0.98) !important;
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
     }
   }
 </style>
