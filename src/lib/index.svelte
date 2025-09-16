@@ -1,5 +1,5 @@
 <script>
-  import { fly, slide, fade } from 'svelte/transition';
+  import { fly, slide } from 'svelte/transition';
   import { Configuration, Answer } from './configuration';
   import Anser from './answer.svelte';
 
