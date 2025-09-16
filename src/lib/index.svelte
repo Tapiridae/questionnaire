@@ -59,7 +59,10 @@
       ontouchend={next}
     >
       <div
-        class={['title home', showEnding ? 'ending-text' : '']}
+        class={[
+          showEnding ? 'ending-text' : '',
+          index === 0 ? 'title home' : 'title'
+        ]}
         in:fly={{ x: -100, duration: 500 }}
       >
         {current.title}
@@ -82,10 +85,7 @@
       {#if showEnding}
         <div class="question" in:slide={{ duration: 400 }}>
           {#each endingCurrent as option, i}
-            <span
-              class="option-plain ending-text"
-              style="animation-delay: {i * 0.1}s"
-            >
+            <span class="option-plain" style="animation-delay: {i * 0.1}s">
               {option.title}
             </span>
             <br />
@@ -114,10 +114,7 @@
 
   .home {
     font-size: 30px;
-  }
-
-  .ending-text {
-    font-size: 26px;
+    margin-left: 32px;
   }
 
   :global {
@@ -140,6 +137,10 @@
       color: #fff;
       margin: 80px 42px 20px;
       font-weight: 500;
+    }
+
+    .ending-text {
+      font-size: 26px;
     }
 
     .section {

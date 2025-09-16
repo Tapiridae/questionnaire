@@ -27,7 +27,10 @@
       in:fly={{ y: 100, duration: 600 }}
       out:fade
     >
-      <div class="title section" in:fly={{ x: -50, duration: 500, delay: 200 }}>
+      <div
+        class="title section ending-text"
+        in:fly={{ x: -50, duration: 500, delay: 200 }}
+      >
         {current.title}
       </div>
       <div class="content" in:fly={{ y: 50, duration: 500, delay: 400 }}>
