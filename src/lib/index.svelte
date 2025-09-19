@@ -11,11 +11,13 @@
 
   const showEnding = $derived(index === ending);
   const current = $derived(Configuration[index]); // 当前问题
-  let currentData = $derived(data[index - 1]); // 当前页答案
+  const currentData = $derived(data[index - 1]); // 当前页答案
 
   // 答案
   const answer = $derived.by(() =>
-    Array.from(new Set(data)).map((key) => Answer[key])
+    Array.from(new Set(data))
+      .sort()
+      .map((key) => Answer[key])
   );
 
   // 结算内容
@@ -35,7 +37,7 @@
 
   // 点击答案
   const select = (value) => {
-    currentData = value;
+    data[index - 1] = value;
   };
 
   // 下一题
