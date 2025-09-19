@@ -35,7 +35,6 @@
       </div>
       <div class="content" in:fly={{ y: 50, duration: 500, delay: 400 }}>
         <p>{current.content.title}</p>
-        <p>{current.content.descriptionEN}</p>
         <p>{current.content.description}</p>
       </div>
     </div>
@@ -62,10 +61,6 @@
   }
 
   .content p:nth-child(2) {
-    font-size: 13px;
-  }
-
-  .content p:nth-child(3) {
     font-size: 14px;
     margin-bottom: 2rem;
   }

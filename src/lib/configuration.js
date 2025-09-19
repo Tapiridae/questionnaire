@@ -174,8 +174,7 @@ export const Answer = {
     background: AA,
     content: {
       title: '午夜黑',
-      description: '此刻，遁入深邃之境。',
-      descriptionEN: 'Moments to dive deep into everywhere.'
+      description: '此刻，遁入深邃之境。'
     }
   },
   B: {
@@ -183,8 +182,7 @@ export const Answer = {
     background: AB,
     content: {
       title: '暮银',
-      description: '此刻，随心自在律动。',
-      descriptionEN: 'Moments driven by rhythm and effortless flow.'
+      description: '此刻，随心自在律动。'
     }
   },
   C: {
@@ -192,8 +190,7 @@ export const Answer = {
     background: AC,
     content: {
       title: '幻影蓝',
-      description: '此刻，沉浸内心自我。',
-      descriptionEN: 'Moments to unwind and get lost in a story.'
+      description: '此刻，沉浸内心自我。'
     }
   },
   D: {
@@ -201,8 +198,7 @@ export const Answer = {
     background: AD,
     content: {
       title: '可可棕',
-      description: '此刻，自有悠然天地。',
-      descriptionEN: 'Moments curating the vibe, no playlists needed.'
+      description: '此刻，自有悠然天地。'
     }
   },
   E: {
@@ -210,8 +206,7 @@ export const Answer = {
     background: AE,
     content: {
       title: '森绿',
-      description: '此刻，疗愈静谧本心。',
-      descriptionEN: 'Moments of focus, amplified in stillness.'
+      description: '此刻，疗愈静谧本心。'
     }
   },
   F: {
@@ -219,8 +214,7 @@ export const Answer = {
     background: AF,
     content: {
       title: '雾琥珀',
-      description: '此刻，尽享时光流转。',
-      descriptionEN: 'Moments capturing the frame by frame.'
+      description: '此刻，尽享时光流转。'
     }
   },
   G: {
@@ -228,8 +222,7 @@ export const Answer = {
     background: AG,
     content: {
       title: '橙月',
-      description: '此刻，掌控冒险本色。',
-      descriptionEN: 'Moments owning the rhythm of adventure.'
+      description: '此刻，掌控冒险本色。'
     }
   }
 };
