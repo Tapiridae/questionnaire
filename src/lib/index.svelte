@@ -1,16 +1,17 @@
 <script>
-  import { fly, slide } from 'svelte/transition';
+  import { fade, fly, slide } from 'svelte/transition';
   import { Configuration, Answer } from './configuration';
   import Anser from './answer.svelte';
 
   const ending = 5; // 结束页码
 
   let index = $state(0); // 当前页码
-  let data = $state([]); // 答案出现次数
+  let data = $state([]); // 答案
   let showAnswer = $state(false); // 是否显示答案
 
   const showEnding = $derived(index === ending);
   const current = $derived(Configuration[index]); // 当前问题
+  let currentData = $derived(data[index - 1]); // 当前页答案
 
   // 答案
   const answer = $derived.by(() =>
@@ -33,8 +34,12 @@
   };
 
   // 点击答案
-  const click = (value) => {
-    data.push(value);
+  const select = (value) => {
+    currentData = value;
+  };
+
+  // 下一题
+  const nextQuestion = () => {
     index += 1;
   };
 
@@ -71,14 +76,21 @@
         <div class="question" in:slide={{ duration: 400 }}>
           {#each current.options as option, i}
             <span
-              class="option"
+              class={['option', currentData === option.value ? 'active' : '']}
               style="animation-delay: {i * 0.1}s"
-              ontouchend={() => click(option.value)}
+              ontouchend={() => select(option.value)}
             >
               {option.title}
             </span>
             <br />
           {/each}
+          {#if currentData}
+            <button
+              transition:fade
+              class="next-button"
+              ontouchend={nextQuestion}>下一步</button
+            >
+          {/if}
         </div>
       {/if}
       <!-- 结算页 -->
@@ -115,6 +127,20 @@
   .home {
     font-size: 30px;
     margin-left: 32px;
+  }
+
+  .active {
+    position: relative;
+    color: #ff7200;
+    top: 2px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .next-button {
+    margin-top: 20px;
+    background-color: #ff7200;
+    color: #fff;
+    border-radius: 5px;
   }
 
   :global {
@@ -170,13 +196,6 @@
       padding: 6px 0;
       opacity: 0;
       animation: fadeInUp 0.5s forwards;
-    }
-
-    .option:active {
-      position: relative;
-      color: #ff7200;
-      top: 2px;
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
     }
 
     .preview {
