@@ -132,9 +132,9 @@
   }
 
   .active {
-    position: relative;
     color: #ff7200;
-    top: 2px;
+    font-weight: bold;
+    text-decoration: underline;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
   }
 

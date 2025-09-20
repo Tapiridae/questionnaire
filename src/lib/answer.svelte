@@ -1,6 +1,7 @@
 <script>
   import { fly, fade } from 'svelte/transition';
   import CountImage from '/count.jpg';
+  import ChevronsDown from '/chevrons-down.svg?raw';
 
   let { answer = [], onReset, show } = $props();
   let index = $state(0);
@@ -37,6 +38,9 @@
         >
           {current.title}
         </div>
+        <span class="chevrons">
+          {@html ChevronsDown}
+        </span>
         <div class="content" in:fly={{ y: 50, duration: 500, delay: 400 }}>
           <p>{current.content.title}</p>
           <p>{current.content.description}</p>
@@ -58,6 +62,22 @@
 {/if}
 
 <style>
+  :global {
+    .chevrons {
+      position: relative;
+      height: calc(100vh - 78px - 169px - 103px);
+    }
+    .chevrons > svg {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: bounce 1s infinite;
+    }
+  }
   .content {
     position: absolute;
     bottom: 0;
@@ -90,5 +110,17 @@
     height: 100%;
     font-size: 32px;
     font-weight: 500;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: none;
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
   }
 </style>
