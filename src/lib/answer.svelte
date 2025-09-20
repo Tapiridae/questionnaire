@@ -3,7 +3,7 @@
   import CountImage from '/count.jpg';
   import ChevronsDown from '/chevrons-down.svg?raw';
 
-  let { answer = [], onReset, show } = $props();
+  let { answer = [], show } = $props();
   let index = $state(0);
 
   const end = $derived(index >= answer.length); // 是否结束
@@ -15,10 +15,6 @@
 
   const next = () => {
     index += 1;
-    // if (index >= answer.length) {
-    //   onReset();
-    //   index = 0;
-    // }
   };
 </script>
 

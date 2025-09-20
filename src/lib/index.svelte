@@ -112,7 +112,7 @@
     </div>
   {/key}
 {/if}
-<Anser show={showAnswer} {answer} onReset={reset} />
+<Anser show={showAnswer} {answer} />
 
 <style>
   @keyframes fadeInUp {
